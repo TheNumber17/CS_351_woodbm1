@@ -11,7 +11,8 @@
     "serve": "^14.2.6"
   },
   "scripts": {
-    "basic": "serve basic-site"
+    "basic": "serve basic-site",
+    "e01": "node exercise01/server.js"
   },
   "dependencies": {
     "express": "^5.2.1"
