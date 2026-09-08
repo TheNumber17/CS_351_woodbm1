@@ -1,6 +1,6 @@
 # CS 351: Web Development and Internet Programming
 ***Fall 2026***  
-***Author: YOUR NAME HERE***  
+***Author: Brady Wood***  
 ***Original Author: Dr. Michael J. Reale***  
 ***SUNY Polytechnic Institute*** 
 
@@ -27,3 +27,8 @@ npx serve basic-site
 ```
 
 The website should then be accessible at [localhost:3000](http://localhost:3000).
+
+
+## Websites
+
+### exercise01
