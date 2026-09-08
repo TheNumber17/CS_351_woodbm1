@@ -12,7 +12,7 @@
   },
   "scripts": {
     "basic": "serve basic-site",
-    "e01": "node exercise01/server.js"
+    "e01": "node ./server.js"
   },
   "dependencies": {
     "express": "^5.2.1"
