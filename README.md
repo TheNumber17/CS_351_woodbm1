@@ -32,3 +32,6 @@ The website should then be accessible at [localhost:3000](http://localhost:3000)
 ## Websites
 
 ### exercise01
+
+### exercise02
+A static HTML page about movies
