@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+                content="width=device-width, initial-scale=1.0">
+        <title>Loremaker</title>
+    </head>
+    <body>
+        <header>
+            <h1>Loremaker</h1>
+        </header>
+        <main>
+            <h2>Details</h2>
+
+            <form action="story" method="get">
+                <label for="given-name">Given Name:</label>
+                <input type="text" id="given-name" name="firstname">
+
+                <label for="birthplace">Place of Birth:</label>
+                <select id="birthplace" name="birth">
+                    <option value="town">Village</option>
+                    <option value="city">City</option>
+                    <option value="forest">Forest</option>
+                </select>
+
+                <button type="submit">Submit</button>
+            </form>
+        </main>
+    </body>
+</html>
