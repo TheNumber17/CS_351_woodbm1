@@ -41,3 +41,7 @@ Runs a very basic Node.js server (the PROFESSOR version :).
 
 A static HTML page about the best movie.
 
+### excercise03-static
+
+Demonstrates handling a GET request through client-side code
+
