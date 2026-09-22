@@ -43,5 +43,8 @@ A static HTML page about the best movie.
 
 ### excercise03-static
 
-Demonstrates handling a GET request through client-side code
+Demonstrates handling a GET request through client-side code.
 
+### excersice03-dynamic
+
+Demonstrates handling a POST request through server-side code.
