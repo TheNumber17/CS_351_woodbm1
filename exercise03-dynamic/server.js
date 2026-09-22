@@ -6,13 +6,20 @@ const server = http.createServer((req, res) => {
 
     if(req.method === "GET" && req.url === "/") {
         const filepath = path.join(__dirname, "public", "index.html");
-        
+        console.log("FILE:", filepath);
         fs.readFile(filepath, (err, data) => {
-            //TODO
+            if(err) {
+                console.log("ERROR:", err.message);
+                res.writeHead(500, { "Content-Type": "text/plain" });
+                res.end("500 - Internal Server Error");
+                return;
+            }
+            res.writeHead(200, { "Content-Type": "text/html" });
+            res.end(data);
         });
 
-        res.writeHead(200, { "Content-Type": "text/plain" });
-        res.end("HOME");
+        //res.writeHead(200, { "Content-Type": "text/plain" });
+        //res.end("HOME");
 
         return;
     } else if(req.method === "GET" && req.url === "/story") {
