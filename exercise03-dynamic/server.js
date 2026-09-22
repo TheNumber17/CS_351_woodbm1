@@ -39,6 +39,7 @@ const server = http.createServer((req, res) => {
             const firstname = params.get("firstname");
             const birth = params.get("birth");
             const height = params.get("height");
+            const dob = params.get("dob");
 
             res.writeHead(200, { "Content-Type": "text/html" });
             res.end(`
@@ -51,7 +52,7 @@ const server = http.createServer((req, res) => {
                     </head>
                     <body>
                         <h1>The Tale of ${firstname}</h1>
-                        <p>${firstname} was born at a very young age in a ${birth}. ${firstname} is 
+                        <p>${firstname} was born at a very young age in a ${birth}, on ${dob}. ${firstname} is 
                         ${height} yards tall.</p>
                     </body>
                 </html>
