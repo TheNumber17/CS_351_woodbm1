@@ -23,12 +23,17 @@
                 <label for="dob">Date of Birth:</label>
                 <input type="date" id="dob" name="dob"><br>
 
-                <label for="birthplace">Place of Birth:</label>
-                <select id="birthplace" name="birth">
-                    <option value="town">Village</option>
-                    <option value="city">City</option>
-                    <option value="forest">Forest</option>
-                </select>
+
+                <label>Place of Birth:</label>
+
+                <input type="radio" id="town" name="birth" value="town">
+                <label for="town">Town</label>
+
+                <input type="radio" id="city" name="birth" value="city">
+                <label for="city">City</label>
+
+                <input type="radio" id="forest" name="birth" value="forest">
+                <label for="forest">Forest</label>
 
                 <button type="submit">Submit</button>
             </form>
