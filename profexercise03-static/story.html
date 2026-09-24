@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+                content="width=device-width, initial-scale=1.0">
+        <title>The Story Thus Far...</title>
+    </head>
+    <body>
+        <header>
+            <h1 id="storytitle"></h1>
+        </header>
+        <main>
+            <p id="story"></p>
+        </main>
+        <script>
+            const params = new URLSearchParams(window.location.search);
+            const firstname = params.get("firstname");
+            const birthplace = params.get("birth");
+
+            document.getElementById("storytitle").textContent =
+                `The Tale of ${firstname}`;
+            
+            document.getElementById("story").textContent = 
+                `${firstname} was born at a very young age
+                in a ${birthplace}.`;
+        </script>
+    </body>
+</html>

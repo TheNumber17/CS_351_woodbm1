@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+                content="width=device-width, initial-scale=1.0">
+        <title>Loremaker</title>
+    </head>
+    <body>
+        <header>
+            <h1>Loremaker</h1>
+        </header>
+        <main>
+            <h2>Enter thy details</h2>
+            
+            <form action="story" method="post">
+                <label for="given-name">Enter thy given name:</label>
+                <input type="text" id="given-name" 
+                        name="firstname" required
+                        placeholder="E.g., Bob Ferguson"><br>
+
+                <label for="height">Height (in feet):</label>
+                <input type="number" id="height" 
+                    name="height" min="0" step="0.1"><br>
+
+                <label for="phone">Thy digits:</label>
+                <input type="tel" id="phone" name="phone"
+                        required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
+
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob"><br>
+                
+                <label>Place of Birth:</label><br>
+                
+                <input type="radio" id="town" name="birth" 
+                        value="town" required>
+                <label for="town">Village</label><br>
+
+                <input type="radio" id="city" name="birth" value="city">
+                <label for="city">City</label><br>
+
+                <input type="radio" id="forest" name="birth" value="forest">
+                <label for="forest">Forest</label><br>
+
+                <input type="hidden" id="secret" name="secret" value="1234">
+
+
+
+                <!--
+                <select id="birthplace" name="birth">
+                    <option value="town">Village</option>
+                    <option value="city">City</option>
+                    <option value="forest">Forest</option>
+                </select>-->
+
+                <button type="submit">Submit Thy Form</button>
+            </form>
+        </main>
+    </body>
+</html>
