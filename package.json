@@ -15,7 +15,8 @@
     "e01": "node ./server.js",
     "e02": "serve exercise02",
     "p01": "node profexercise01/server.js",
-    "p02": "serve profexercise02"
+    "p02": "serve profexercise02",
+    "a01": "server assignment01"
   },
   "dependencies": {
     "express": "^5.2.1"
