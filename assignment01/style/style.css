@@ -1,0 +1,26 @@
+img.thumbnail {
+width: 250px;
+margin-left: 60px;
+border-style: solid;
+border-width: 2px;
+border-color: red;
+}
+
+img.screenshot {
+    width: 1000px;
+    margin-top: 40px;
+}
+
+a.return {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
+}
+
+h4 {
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}

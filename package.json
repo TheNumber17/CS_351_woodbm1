@@ -19,7 +19,8 @@
     "e03s": "serve exercise03-static",
     "e03d": "node exercise03-dynamic/server.js",
     "p03s": "serve profexercise03-static",
-    "p03d": "node profexercise03-dynamic/server.js"
+    "p03d": "node profexercise03-dynamic/server.js",
+    "a01": "serve assignment01"
   },
   "dependencies": {
     "express": "^5.2.1"
