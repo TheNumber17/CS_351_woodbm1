@@ -23,3 +23,9 @@ h1, h2, h3, h4, h5, h6{
 article{
     background-color: rgba(255, 255, 255, 0.699);
 }
+
+.robot{
+    color: grey;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+}
