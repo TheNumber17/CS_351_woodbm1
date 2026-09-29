@@ -1,9 +1,16 @@
 p{
-    color: #000099;
+    color: green;
     font-size: 18px;
     font-family: "Comic Sans MS", fantasy;
+    
 }
 
 strong{
     font-size: 2em;
+}
+
+body{
+    background-image: url("/images/background.jpg");
+    background-repeat: repeat;
+    background-size: 220px;
 }
