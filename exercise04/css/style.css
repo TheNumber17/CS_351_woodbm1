@@ -39,3 +39,12 @@ article{
 .robot.warning{
     color: white;
 }
+
+h3:hover{
+    font-style: italic;
+}
+
+p::first-letter{
+    font-size: 1.3em;
+    font-weight: bold;
+}
