@@ -5,7 +5,13 @@ const path = require("path");
 const server = http.createServer((req, res) => {
     console.log("URL:", req.url);
 
-    if(req.method === "GET" && req.url === "/") {
+    if(req.method === "GET") {
+        let urlpath = req.url;
+        if(req.url === "/") {
+            urlpath = "/index.html";
+        }
+
+
         const filepath = path.join(__dirname, "public", "index.html");
         console.log("FILE:", filepath);
         fs.readFile(filepath, (err, data) => {
@@ -17,22 +23,15 @@ const server = http.createServer((req, res) => {
             }
             res.writeHead(200, { "Content-Type": "text/html" });
             res.end(data);
-        });
-        
-        return;
-    } 
-    
-    else if(req.method === "GET" && req.url === "/css/style.css") {
-        const filepath = path.join(__dirname, "public", "css", "style.css");
-        console.log("FILE:", filepath);
-        fs.readFile(filepath, (err, data) => {
-            if(err) {
-                console.log("ERROR:", err.message);
-                res.writeHead(500, { "Content-Type": "text/plain" });
-                res.end("500 - Internal Server Error");
-                return;
+            
+            let contenttype = "text/plain";
+            if(urlpath.endsWith(".html")) {
+                contenttype = "text/html";
             }
-            res.writeHead(200, { "Content-Type": "text/css" });
+            else if(urlpath.endsWith(".css")) {
+                contenttype = "text/css";
+            }
+            res.writeHead(200, { "Content-Type": contenttype }); 
             res.end(data);
         });
         
