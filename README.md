@@ -57,5 +57,8 @@ Demonstrates handling a GET request through client-side code.
 Demonstrates handling a POST request through server-side code.
 ### assignment01
 
-A dynamic html page about video game reviews
+A dynamic html page about video game reviews.
 
+## excersize04
+
+Demonstrate adding CSS.
