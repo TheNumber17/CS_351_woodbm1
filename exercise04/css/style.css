@@ -3,6 +3,12 @@ p{
     font-size: 18px;
     font-family: "Comic Sans MS", fantasy;
 }
+header{
+    width: 500px;
+    border: 2px dashed red;
+    padding: 20px;
+    margin: 5px;
+}
 
 strong{
     font-size: 2em;
@@ -54,4 +60,6 @@ p::first-letter{
 *::after{
     /*border: 5px solid black;*/
     box-sizing: border-box;
+    /*display: inline;*/
+
 }
