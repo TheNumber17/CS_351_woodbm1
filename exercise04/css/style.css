@@ -48,3 +48,10 @@ p::first-letter{
     font-size: 1.3em;
     font-weight: bold;
 }
+
+*,
+*::before,
+*::after{
+    /*border: 5px solid black;*/
+    box-sizing: border-box;
+}
