@@ -3,8 +3,15 @@ const fs = require("fs");
 const path = require("path");
 
 const server = http.createServer((req, res) => {
+    console.log("URL:", req.url);
 
-    if(req.method === "GET" && req.url === "/") {
+    if(req.method === "GET") {
+        let urlpath = req.url;
+        if(req.url === "/") {
+            urlpath = "/index.html";
+        }
+
+
         const filepath = path.join(__dirname, "public", "index.html");
         console.log("FILE:", filepath);
         fs.readFile(filepath, (err, data) => {
@@ -16,15 +23,22 @@ const server = http.createServer((req, res) => {
             }
             res.writeHead(200, { "Content-Type": "text/html" });
             res.end(data);
+            
+            let contenttype = "text/plain";
+            if(urlpath.endsWith(".html")) {
+                contenttype = "text/html";
+            }
+            else if(urlpath.endsWith(".css")) {
+                contenttype = "text/css";
+            }
+            //res.writeHead(200, { "Content-Type": contenttype }); 
+            //res.end(data);
         });
-
-        //res.writeHead(200, { "Content-Type": "text/plain" });
-        //res.end("HOME");
-
+        
         return;
     } 
-    
-    else if(req.method === "POST" && req.url === "/alert") {
+
+    else if(req.method === "POST" && req.url === "/story") {
         let body = "";
 
         req.on("data", chunk => {

@@ -31,8 +31,8 @@ const server = http.createServer((req, res) => {
             else if(urlpath.endsWith(".css")) {
                 contenttype = "text/css";
             }
-            res.writeHead(200, { "Content-Type": contenttype }); 
-            res.end(data);
+            //res.writeHead(200, { "Content-Type": contenttype }); 
+            //res.end(data);
         });
         
         return;
