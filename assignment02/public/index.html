@@ -17,7 +17,7 @@
             <ol>
                 <li>Fill out the form below with some of your basic information.</li>
                 <li>
-                    Fill out the next form with the location of the crime, and any details about 
+                    Fill out the <b>next</b> form with the location of the crime, and any details about 
                     the bad guy.
                 </li>
                 <li>An orbital cannon will immediately triangulate and vaporize the threat!</li>
@@ -28,9 +28,47 @@
             the immediate submission of this forum
         </p>
         <main>
-            <form>
-                
+            <form action="catch" method="get">
+                <div class="form-item">
+                    <label for="given-name">Given Name:</label>
+                    <input type="text" id="given-name" name="firstname" 
+                    required placeholder="E.g. Steven Michael"><br>
+                </div>
+                <div class="form-item">Gender:</div>
+                <div class="form-item">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required><br>
+                </div>
+                <fieldset>
+                    <legend>Enter Email or Phone Number</legend>
+                    <div class="form-item">
+                        <input type="radio" id="email" name="contact" value="email">
+                        <label for="email">Email</label>
+                        <input type="email" id="emailin" name="contact" required
+                        placeholder="E.g. paulzack04@email.com"><br>
+
+                        <input type="radio" id="phone" name="contact" value="phone">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phonein" name="phone" 
+                        required placeholder="E.g. 123-456-7890"
+                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
+                    </div>
+                </fieldset>
+                <div class="form-item">
+                    <p>Are you a robot?</p>
+                    <input type="radio" id="yes" name="robot" value="yes">
+                    <label for="yes">Yes</label>
+                    <input type="radio" id="no" name="robot" value="no">
+                    <label for="no">No</label>
+                    <input type="radio" id="maybe" name="robot" value="maybe">
+                    <label for="maybe">Maybe So</label>
+                    <input type="radio" id="purely" name="robot" value="purely">
+                    <label for="purely">Purely by Association</label>
+                </div>
             </form>
         </main>
+        <footer>
+            <p>Terms of Shmervus: This is my friend Shmervus, please accept his terms.</p>
+        </footer>
     </body>
 </html>
