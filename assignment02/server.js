@@ -21,8 +21,6 @@ const server = http.createServer((req, res) => {
                 res.end("500 - Internal Server Error");
                 return;
             }
-            res.writeHead(200, { "Content-Type": "text/html" });
-            res.end(data);
             
             let contenttype = "text/plain";
             if(urlpath.endsWith(".html")) {
@@ -31,14 +29,14 @@ const server = http.createServer((req, res) => {
             else if(urlpath.endsWith(".css")) {
                 contenttype = "text/css";
             }
-            //res.writeHead(200, { "Content-Type": contenttype }); 
-            //res.end(data);
+            res.writeHead(200, { "Content-Type": contenttype }); 
+            res.end(data);
         });
         
         return;
     } 
 
-    else if(req.method === "POST" && req.url === "/story") {
+    else if(req.method === "GET" && req.url === "/summary") {
         let body = "";
 
         req.on("data", chunk => {
@@ -50,13 +48,15 @@ const server = http.createServer((req, res) => {
         req.on("end", () => {
             console.log(`Request: ${body}`);
             const params = new URLSearchParams(body);
-            const firstname = params.get("firstname");
-            const birth = params.get("birth");
-            const height = params.get("height");
-            let yearstring = "an unkown time";
+            const name = params.get("name");
+            const gender = params.get("gender");
+            const haircolor = params.get("haircolor");
+            const bloodtype = params.get("bloodtype");
+            const map = params.get("map");
+            const robot = params.get("robot");
             const dob = params.get("dob");
 
-            if(dob === ""){
+            /*if(dob === ""){
                 yearstring = "an unknown time";
             }
             else{
@@ -80,10 +80,10 @@ const server = http.createServer((req, res) => {
                         ${height} yards tall.</p>
                     </body>
                 </html>
-                `);
+                `);*/
         });
 
-        console.log("End of response for POST");
+        console.log("End of response for GET");
 
         //res.writeHead(200, { "Content-Type": "text/plain" });
         //res.end("STORY");
