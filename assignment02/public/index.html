@@ -1,9 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-US">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
-        <link rel="stylesheet" href="/style/style.css">
+        <link rel="stylesheet" href="mycss/style.css" />
         <title>Bad Guy Catcher</title>
     </head>
     <body>
@@ -32,8 +32,8 @@
         <main>
             <form action="catch" method="get">
                 <div class="form-item">
-                    <label for="given-name">Given Name:</label>
-                    <input type="text" id="given-name" name="firstname" 
+                    <label for="name">Given Name:</label>
+                    <input type="text" id="name" name="firstname" 
                     required placeholder="E.g. Steven Michael"><br>
                 </div>
                 <div class="form-item">
@@ -72,6 +72,23 @@
                     <input type="color" id="haircolor" name="haircolor" required><br>
                 </div>
                 <div class="form-item">
+                    What Is Your Bloodtype?
+                    <input type="radio" id="A" name="blood" value="A">
+                    <label for="A">A</label>
+                    <input type="radio" id="AB" name="blood" value="AB">
+                    <label for="AB">AB</label>
+                    <input type="radio" id="B" name="blood" value="B">
+                    <label for="B">B</label>
+                    <input type="radio" id="C" name="blood" value="C">
+                    <label for="C">C</label>
+                    <input type="radio" id="D" name="blood" value="D">
+                    <label for="D">D</label>
+                </div>
+                <div class="form-item">
+                    <label for="map">What's Your Current Location?</label>
+                    <input type="text" id="map" name="location" required>
+                </div>
+                <div class="form-item">
                     Are you a robot?
                     <input type="radio" id="yes" name="robot" value="yes">
                     <label for="yes">Yes</label>
@@ -79,8 +96,6 @@
                     <label for="no">No</label>
                     <input type="radio" id="maybe" name="robot" value="maybe">
                     <label for="maybe">Maybe So</label>
-
-
                 </div>
             </form>
         </main>
