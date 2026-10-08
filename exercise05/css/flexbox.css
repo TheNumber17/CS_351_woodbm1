@@ -1,4 +1,11 @@
 .cards{
     display: flex;
     flex-direction: column;
+    gap: 20px;
+}
+
+.card{
+    margin: 10px;
+    border: 2px solid black;
+    padding: 15px;
 }
