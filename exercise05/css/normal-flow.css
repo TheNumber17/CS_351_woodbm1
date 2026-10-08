@@ -8,3 +8,11 @@ nav a{
     height: 150px;
     vertical-align: top;
 }
+
+.first{
+    margin-bottom: 20px;
+}
+
+.second{
+    margin-top:30px;
+}
