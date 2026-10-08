@@ -7,7 +7,9 @@
         <title>Bad Guy Catcher</title>
     </head>
     <body>
-        <header>Welcome to Bad Guy Catcher!</header>
+        <header>
+            <h1>Welcome to Bad Guy Catcher!</h1>
+        </header>
         <div class="procedure">
             <h3>Procedure</h3>
             <p>
@@ -34,7 +36,18 @@
                     <input type="text" id="given-name" name="firstname" 
                     required placeholder="E.g. Steven Michael"><br>
                 </div>
-                <div class="form-item">Gender:</div>
+                <div class="form-item">
+                    Gender:
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                    <input type="radio" id="nonbinary" name="gender" value="nonbinary">
+                    <label for="nonbinary">Non-binary</label>
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">Other:</label>
+                    <input type="text" id="otherin" name="other" placeholder="Please specify"><br>
+                </div>
                 <div class="form-item">
                     <label for="dob">Date of Birth:</label>
                     <input type="date" id="dob" name="dob" required><br>
@@ -50,20 +63,24 @@
                         <input type="radio" id="phone" name="contact" value="phone">
                         <label for="phone">Phone Number</label>
                         <input type="tel" id="phonein" name="phone" 
-                        required placeholder="E.g. 123-456-7890"
+                        required placeholder="E.g. 800-588-2300"
                         pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
                     </div>
-                </fieldset>
+                </fieldset><br>
                 <div class="form-item">
-                    <p>Are you a robot?</p>
+                    <label for="haircolor">What Is The Color of Your Hair?</label>
+                    <input type="color" id="haircolor" name="haircolor" required><br>
+                </div>
+                <div class="form-item">
+                    Are you a robot?
                     <input type="radio" id="yes" name="robot" value="yes">
                     <label for="yes">Yes</label>
                     <input type="radio" id="no" name="robot" value="no">
                     <label for="no">No</label>
                     <input type="radio" id="maybe" name="robot" value="maybe">
                     <label for="maybe">Maybe So</label>
-                    <input type="radio" id="purely" name="robot" value="purely">
-                    <label for="purely">Purely by Association</label>
+
+
                 </div>
             </form>
         </main>
