@@ -1,0 +1,10 @@
+nav a{
+    display:block;
+}
+
+.card{
+    display:inline-block;
+    width: 200px;
+    height: 150px;
+    vertical-align: top;
+}
