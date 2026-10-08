@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Criminal Caught!</title>
+      </head>
+      <body>
+        <header>
+            <h1>Criminal Caught!!!!</h1>
+        </header>
+        <main>
+            <p>
+                Good news! We caught your criminal! Here's &{pronouns} information!
+
+            </p>
+        </main>
+        <button type="button" href="">LAUNCH ORBITAL LASER</button>
+        <script>
+            const params = new URLSearchParams(body);
+            const name = params.get("name");
+            const gender = params.get("gender");
+            const haircolor = params.get("haircolor");
+            const bloodtype = params.get("bloodtype");
+            const map = params.get("map");
+            const robot = params.get("robot");
+            const dob = params.get("dob");
+            let pronouns = "their";
+
+            if(gender === "male"){
+                pronouns = "his";
+            }
+            else if(gender === "female"){
+                pronouns = "her"
+            }
+        </script>
+      </body>
+</html>
