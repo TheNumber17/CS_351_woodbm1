@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="/css/style.css">
+        <title>Bad Guy Catcher</title>
+    </head>
+    <body>
+        <header>
+            <h1>Welcome to Bad Guy Catcher!</h1>
+        </header>
+        <div class="procedure">
+            <h3>Procedure</h3>
+            <p>
+                Welcome to the Bad Guy Catcher! Follow these 3 simple steps to report a bad guy 
+                to our crime-fighting database:
+            </p>
+            <ol>
+                <li>Fill out the form below with some of your basic information.</li>
+                <li>
+                    Fill out the <b>next</b> form with the location of the crime, and any details about 
+                    the bad guy.
+                </li>
+                <li>An orbital cannon will immediately triangulate and vaporize the criminal!</li>
+            </ol>
+        </div>
+        <p class="warning">
+            Disclaimer: Any stolen possessions may be absolutely destroyed in
+            the immediate submission of this forum
+        </p>
+        <main>
+            <form action="summary" method="GET">
+                <div class="form-item">
+                    <label for="name">Given Name:</label>
+                    <input type="text" id="name" name="name" 
+                    required placeholder="E.g. Steven Michael"
+                    minlength="2"><br>
+                </div>
+                <div class="form-item">
+                    Gender:
+                    <input type="radio" id="male" name="gender" value="Male"
+                    onclick="javascript:genderCheck();">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="Female"
+                    onclick="javascript:genderCheck();">
+                    <label for="female">Female</label>
+                    <input type="radio" id="nonbinary" name="gender" value="Nonbinary"
+                    onclick="javascript:genderCheck();">
+                    <label for="nonbinary">Non-binary</label>
+                    <input type="radio" id="other" name="gender"
+                    onclick="javascript:genderCheck();">
+                    <label for="other">Other:</label>
+                    <input type="text" id="otherin" name="other" placeholder="Please specify"
+                    class="hiddenbox"><br>
+                </div>
+                <div class="form-item">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required><br>
+                </div>
+                <fieldset>
+                    <legend>Enter Email or Phone Number</legend>
+                    <div class="form-item">
+                        <input type="radio" id="email" name="contact"
+                        onclick="javascript:emailphoneCheck();">
+                        <label for="email">Email</label>
+                        <input type="email" id="emailin" name="email"
+                        placeholder="E.g. paulzack04@email.com"
+                        class="hiddenbox"><br>
+
+                        <input type="radio" id="phone" name="contact"
+                        onclick="javascript:emailphoneCheck();">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phonein" name="phone" 
+                        placeholder="E.g. 800-588-2300"
+                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                        class="hiddenbox"><br>
+                    </div>
+                </fieldset><br>
+                <div class="form-item">
+                    <label for="haircolor">What Is The Color of Your Hair?</label>
+                    <input type="color" id="haircolor" name="haircolor" required><br>
+                </div>
+                <div class="form-item">
+                    What Is Your Bloodtype?
+                    <input type="radio" id="A" name="blood" value="A">
+                    <label for="A">A</label>
+                    <input type="radio" id="AB" name="blood" value="AB">
+                    <label for="AB">AB</label>
+                    <input type="radio" id="B" name="blood" value="B">
+                    <label for="B">B</label>
+                    <input type="radio" id="C" name="blood" value="C">
+                    <label for="C">C</label>
+                    <input type="radio" id="D" name="blood" value="D">
+                    <label for="D">D</label>
+                </div>
+
+                <div class="form-item">
+                    <label for="map">What's Your Current Location?</label>
+                    <textarea id="map" name="location" 
+                    placeholder="Enter any description of your current location" 
+                    rows="" required></textarea>
+                </div>
+                <div class="form-item">
+                    Are you a robot?
+                    <input type="radio" id="yes" name="robot" value="yes">
+                    <label for="yes">Yes</label>
+                    <input type="radio" id="no" name="robot" value="no">
+                    <label for="no">No</label>
+                    <input type="radio" id="maybe" name="robot" value="maybe">
+                    <label for="maybe">Maybe So</label>
+                </div>
+                <section>
+                    <p>Terms of Servus: This is my friend Servus, please accept his terms.</p>
+                    <img src="images/servus.jpg" alt="a portrait of Servus">
+                    <div class="stack">
+                        <input type="checkbox" id="taco" name="terms" value="taco" required>
+                        <label for="taco">Agree to buy me taco bell</label>
+                        <input type="checkbox" id="data" name="terms" value="data" required>
+                        <label for="data">Agree to give your data to WeWillLookForAnyExcuseToBlowThingsUp LLC(c)</label>
+                    </div>
+                </section>
+
+                <button type="submit">Submit</button>
+            </form>
+        </main>
+        <footer>
+            <p class="warning">
+            REAL Disclaimer: The events implied by this webpage are fictitious. Information
+            entered in this website will not be collected nor will it be used to harm
+            anyone.
+            </p>
+        </footer>
+
+        <script>
+            function emailphoneCheck() {
+                if (document.getElementById('email').checked) {
+                    document.getElementById('emailin').style.display = 'inline';
+                    document.getElementById('emailin').required = true;
+                    document.getElementById('emailin').value = "";
+                    document.getElementById('phonein').style.display = 'none';
+                    document.getElementById('phonein').required = false;
+                    document.getElementById('phonein').value = "000-000-0000";
+                }
+                else {
+                    document.getElementById('phonein').style.display = 'inline';
+                    document.getElementById('phonein').required = true;
+                    document.getElementById('phonein').value = "";
+                    document.getElementById('emailin').style.display = 'none';
+                    document.getElementById('emailin').required;
+                    document.getElementById('emailin').value = "null@null";
+                }           
+            }
+
+            function genderCheck(){
+                if(document.getElementById('other').checked){
+                    document.getElementById('otherin').style.display = `inline`;
+                    document.getElementById('otherin').required = true;
+                    document.getElementById('otherin').value = "";
+                }
+                else{
+                    document.getElementById('otherin').style.display = `none`;
+                    document.getElementById('otherin').required = false;
+                    document.getElementById('otherin').value = "null";
+                }
+            }
+        </script>
+    </body>
+</html>

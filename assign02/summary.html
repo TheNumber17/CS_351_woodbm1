@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/style.css">
+        <title>Criminal Caught!</title>
+      </head>
+      <body>
+        <header>
+            <h1>Criminal Caught!!!!</h1>
+        </header>
+        <main>
+            <p id="pronouns"></p>
+            <ul>
+                <li id="name"></li>
+                <li id="contact"></li>
+                <li id="gender"></li>
+                <li id="dob"></li>
+                <li id="haircolor"></li>
+                <li id="bloodtype"></li>
+                <li id="robot"></li>
+                <li id="map" class="important"></li>
+            </ul>
+            <p>
+                Whenever you're ready to wrap things up, just press the "LAUNCH ORBITAL
+                LASER" button below. Justice will be served, and you can be on with 
+                your merry day! We hope to see you again soon!
+            </p>
+        </main>
+        <button id="button" class="launch">LAUNCH ORBITAL LASER</button>
+        <script>
+            const params = new URLSearchParams(window.location.search);
+            const name = params.get("name");
+            const email = params.get("email");
+            const phone = params.get("phone");
+            const haircolor = params.get("haircolor");
+            const bloodtype = params.get("blood");
+            const map = params.get("location");
+            const robot = params.get("robot");
+            const dob = params.get("dob");
+            const genderplus = params.get("other");
+
+            let gender = params.get("gender");
+            let pronouns = "their";
+            let robostat = "";
+
+            if(gender === "Male"){
+                pronouns = "his";
+            }
+            else if(gender === "Female"){
+                pronouns = "her"
+            }
+
+            if(genderplus !== "null"){
+                gender = genderplus;
+            }
+
+
+            if(robot === "yes"){
+                robostat = "(EMPs will also be deployed)";
+            }
+            else if(robot === "maybe"){
+                robostat = "(EMPs may also be deployed)";
+            }
+
+
+            document.getElementById("pronouns").textContent=`Good news! We caught your criminal! Here's ${pronouns} information!`
+            document.getElementById("name").textContent=`Name: ${name}`;
+            document.getElementById("gender").textContent=`Gender: ${gender}`;
+            document.getElementById("dob").textContent=`Date of Birth: ${dob}`;
+            document.getElementById("haircolor").textContent=`Haircolor: ${haircolor}`;
+            document.getElementById("haircolor").style.color = `${haircolor}`;
+            document.getElementById("bloodtype").textContent=`Bloodtype: ${bloodtype}`;
+            document.getElementById("robot").textContent=`Robot?: ${robot} ${robostat}`;
+            document.getElementById("map").textContent=`Current Location: ${map}`;
+
+            if(email === "null@null"){
+                document.getElementById("contact").textContent=`Phone: ${phone}`;
+            }
+            else{
+                document.getElementById("contact").textContent=`Email: ${email}`;
+            }
+
+            document.getElementById("button").onclick = function(){
+                window.location.href = "./video/EoOL.mp4";
+            };
+        </script>
+      </body>
+</html>
