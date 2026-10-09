@@ -28,7 +28,7 @@
                 your merry day! We hope to see you again soon!
             </p>
         </main>
-        <button id="button">LAUNCH ORBITAL LASER</button>
+        <button id="button" class="launch">LAUNCH ORBITAL LASER</button>
         <script>
             const params = new URLSearchParams(window.location.search);
             const name = params.get("name");
@@ -70,6 +70,7 @@
             document.getElementById("gender").textContent=`Gender: ${gender}`;
             document.getElementById("dob").textContent=`Date of Birth: ${dob}`;
             document.getElementById("haircolor").textContent=`Haircolor: ${haircolor}`;
+            document.getElementById("haircolor").style.color = `${haircolor}`;
             document.getElementById("bloodtype").textContent=`Bloodtype: ${bloodtype}`;
             document.getElementById("robot").textContent=`Robot?: ${robot} ${robostat}`;
             document.getElementById("map").textContent=`Current Location: ${map}`;

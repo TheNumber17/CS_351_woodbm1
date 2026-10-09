@@ -22,7 +22,7 @@
                     Fill out the <b>next</b> form with the location of the crime, and any details about 
                     the bad guy.
                 </li>
-                <li>An orbital cannon will immediately triangulate and vaporize the threat!</li>
+                <li>An orbital cannon will immediately triangulate and vaporize the criminal!</li>
             </ol>
         </div>
         <p class="warning">
@@ -51,7 +51,8 @@
                     <input type="radio" id="other" name="gender"
                     onclick="javascript:genderCheck();">
                     <label for="other">Other:</label>
-                    <input type="text" id="otherin" name="other" placeholder="Please specify"><br>
+                    <input type="text" id="otherin" name="other" placeholder="Please specify"
+                    class="hiddenbox"><br>
                 </div>
                 <div class="form-item">
                     <label for="dob">Date of Birth:</label>
@@ -64,14 +65,16 @@
                         onclick="javascript:emailphoneCheck();">
                         <label for="email">Email</label>
                         <input type="email" id="emailin" name="email"
-                        placeholder="E.g. paulzack04@email.com"><br>
+                        placeholder="E.g. paulzack04@email.com"
+                        class="hiddenbox"><br>
 
                         <input type="radio" id="phone" name="contact"
                         onclick="javascript:emailphoneCheck();">
                         <label for="phone">Phone Number</label>
                         <input type="tel" id="phonein" name="phone" 
                         placeholder="E.g. 800-588-2300"
-                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
+                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                        class="hiddenbox"><br>
                     </div>
                 </fieldset><br>
                 <div class="form-item">
@@ -108,7 +111,14 @@
                     <label for="maybe">Maybe So</label>
                 </div>
                 <section>
-                    <p>Terms of Shmervus: This is my friend Shmervus, please accept his terms.</p>
+                    <p>Terms of Servus: This is my friend Servus, please accept his terms.</p>
+                    <img src="images/servus.jpg" alt="a portrait of Servus">
+                    <div class="stack">
+                        <input type="checkbox" id="taco" name="terms" value="taco" required>
+                        <label for="taco">Agree to buy me taco bell</label>
+                        <input type="checkbox" id="data" name="terms" value="data" required>
+                        <label for="data">Agree to give your data to WeWillLookForAnyExcuseToBlowThingsUp LLC(c)</label>
+                    </div>
                 </section>
 
                 <button type="submit">Submit</button>
