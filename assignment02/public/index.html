@@ -3,7 +3,6 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
-        <link rel="stylesheet" href="mycss/style.css" />
         <title>Bad Guy Catcher</title>
     </head>
     <body>
@@ -30,7 +29,7 @@
             the immediate submission of this forum
         </p>
         <main>
-            <form action="catch" method="get">
+            <form action="summary" method="GET">
                 <div class="form-item">
                     <label for="name">Given Name:</label>
                     <input type="text" id="name" name="firstname" 
@@ -86,7 +85,7 @@
                 </div>
                 <div class="form-item">
                     <label for="map">What's Your Current Location?</label>
-                    <input type="text" id="map" name="location" required>
+                    <textarea id="map" name="location" rows="" required></textarea>
                 </div>
                 <div class="form-item">
                     Are you a robot?
