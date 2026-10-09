@@ -10,7 +10,7 @@
             <h1>Criminal Caught!!!!</h1>
         </header>
         <main>
-            <p>Good news! We caught your criminal! Here's ${pronouns} information!</p>
+            <p id="pronouns"></p>
             <ul>
                 <li id="name"></li>
                 <li id="gender"></li>
@@ -32,8 +32,8 @@
             const name = params.get("name");
             const gender = params.get("gender");
             const haircolor = params.get("haircolor");
-            const bloodtype = params.get("bloodtype");
-            const map = params.get("map");
+            const bloodtype = params.get("blood");
+            const map = params.get("location");
             const robot = params.get("robot");
             const dob = params.get("dob");
             let pronouns = "their";
@@ -52,7 +52,7 @@
             else if(robot === "maybe"){
                 robostat = "(EMPs may also be deployed)";
             }
-
+            document.getElementById("pronouns").textContent=`Good news! We caught your criminal! Here's ${pronouns} information!`
             document.getElementById("name").textContent=`Name: ${name}`;
             document.getElementById("gender").textContent=`Gender: ${gender}`;
             document.getElementById("dob").textContent=`Date of Birth: ${dob}`;
