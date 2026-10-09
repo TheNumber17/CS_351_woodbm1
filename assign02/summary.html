@@ -13,6 +13,7 @@
             <p id="pronouns"></p>
             <ul>
                 <li id="name"></li>
+                <li id="contact"></li>
                 <li id="gender"></li>
                 <li id="dob"></li>
                 <li id="haircolor"></li>
@@ -30,6 +31,8 @@
         <script>
             const params = new URLSearchParams(window.location.search);
             const name = params.get("name");
+            const email = params.get("email");
+            const phone = params.get("phone");
             const haircolor = params.get("haircolor");
             const bloodtype = params.get("blood");
             const map = params.get("location");
@@ -52,6 +55,7 @@
                 gender = genderplus;
             }
 
+
             if(robot === "yes"){
                 robostat = "(EMPs will also be deployed)";
             }
@@ -68,6 +72,13 @@
             document.getElementById("bloodtype").textContent=`Bloodtype: ${bloodtype}`;
             document.getElementById("robot").textContent=`Robot?: ${robot} ${robostat}`;
             document.getElementById("map").textContent=`Current Location: ${map}`;
+
+            if(email === "null@null"){
+                document.getElementById("contact").textContent=`Phone: ${phone}`;
+            }
+            else{
+                document.getElementById("contact").textContent=`Email: ${email}`;
+            }
         </script>
       </body>
 </html>
