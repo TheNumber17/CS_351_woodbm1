@@ -1,0 +1,50 @@
+.warning{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: center;
+    display: inline-flex;
+    border: 3px solid red;
+    padding: 20px 20px;
+}
+
+
+footer .warning{
+    border: 5px solid red;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.form-item{
+    margin-top: 8px;
+}
+
+fieldset{
+    margin-top: 8px;
+}
+
+fieldset input{
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+img{
+    width: 200px;
+    display: block;
+    margin: auto;
+}
+
+.hiddenbox{
+    display: none;
+}
+
+section p{
+    font-weight: bold;
+    text-align: center;
+}
+
+.stack{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
