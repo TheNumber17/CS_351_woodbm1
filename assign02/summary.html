@@ -30,12 +30,14 @@
         <script>
             const params = new URLSearchParams(window.location.search);
             const name = params.get("name");
-            const gender = params.get("gender");
             const haircolor = params.get("haircolor");
             const bloodtype = params.get("blood");
             const map = params.get("location");
             const robot = params.get("robot");
             const dob = params.get("dob");
+            const genderplus = params.get("other");
+
+            let gender = params.get("gender");
             let pronouns = "their";
             let robostat = "";
 
@@ -46,12 +48,18 @@
                 pronouns = "her"
             }
 
+            if(genderplus !== "null"){
+                gender = genderplus;
+            }
+
             if(robot === "yes"){
                 robostat = "(EMPs will also be deployed)";
             }
             else if(robot === "maybe"){
                 robostat = "(EMPs may also be deployed)";
             }
+
+
             document.getElementById("pronouns").textContent=`Good news! We caught your criminal! Here's ${pronouns} information!`
             document.getElementById("name").textContent=`Name: ${name}`;
             document.getElementById("gender").textContent=`Gender: ${gender}`;

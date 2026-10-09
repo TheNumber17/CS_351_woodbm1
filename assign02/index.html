@@ -33,7 +33,8 @@
                 <div class="form-item">
                     <label for="name">Given Name:</label>
                     <input type="text" id="name" name="name" 
-                    required placeholder="E.g. Steven Michael"><br>
+                    required placeholder="E.g. Steven Michael"
+                    minlength="2"><br>
                 </div>
                 <div class="form-item">
                     Gender:
@@ -46,10 +47,10 @@
                     <input type="radio" id="nonbinary" name="gender" value="Nonbinary"
                     onclick="javascript:genderCheck();">
                     <label for="nonbinary">Non-binary</label>
-                    <input type="radio" id="other" name="gender" value="other"
+                    <input type="radio" id="other" name="gender"
                     onclick="javascript:genderCheck();">
                     <label for="other">Other:</label>
-                    <input type="text" id="otherin" name="gender" placeholder="Please specify"><br>
+                    <input type="text" id="otherin" name="other" placeholder="Please specify"><br>
                 </div>
                 <div class="form-item">
                     <label for="dob">Date of Birth:</label>
