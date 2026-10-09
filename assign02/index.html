@@ -57,14 +57,14 @@
                         <input type="radio" id="email" name="contact" value="email"
                         onclick="javascript:emailphoneCheck();">
                         <label for="email">Email</label>
-                        <input type="email" id="emailin" name="contact" required
+                        <input type="email" id="emailin" name="contact"
                         placeholder="E.g. paulzack04@email.com"><br>
 
                         <input type="radio" id="phone" name="contact" value="phone"
                         onclick="javascript:emailphoneCheck();">
                         <label for="phone">Phone Number</label>
                         <input type="tel" id="phonein" name="phone" 
-                        required placeholder="E.g. 800-588-2300"
+                        placeholder="E.g. 800-588-2300"
                         pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
                     </div>
                 </fieldset><br>
@@ -120,14 +120,20 @@
             function emailphoneCheck() {
                 if (document.getElementById('email').checked) {
                     document.getElementById('emailin').style.display = 'inline';
+                    document.getElementById('emailin').toggleAttribute('required');
                 }
                 else if (document.getElementById('phone').checked) {
                     document.getElementById('phonein').style.display = 'inline';
+                    document.getElementById('phonein').toggleAttribute('required');
                 }
                 if (!document.getElementById('email').checked){
                     document.getElementById('emailin').style.display = 'none';
+                    document.getElementById('emailin').toggleAttribute('required');
                 }
-                else document.getElementById('phonein').style.display = 'none';                
+                else{ 
+                    document.getElementById('phonein').style.display = 'none';
+                    document.getElementById('phonein').toggleAttribute('required');
+                }                
             }
         </script>
     </body>
