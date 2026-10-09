@@ -43,6 +43,15 @@ section p{
     text-align: center;
 }
 
+html{
+    background-color: chartreuse;
+}
+
+body{
+    background-color: white;
+    padding: 10px;
+}
+
 .stack{
     display:flex;
     flex-direction: column;
