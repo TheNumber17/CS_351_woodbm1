@@ -39,10 +39,10 @@
             let pronouns = "their";
             let robostat = "";
 
-            if(gender === "male"){
+            if(gender === "Male"){
                 pronouns = "his";
             }
-            else if(gender === "female"){
+            else if(gender === "Female"){
                 pronouns = "her"
             }
 
@@ -58,7 +58,7 @@
             document.getElementById("dob").textContent=`Date of Birth: ${dob}`;
             document.getElementById("haircolor").textContent=`Haircolor: ${haircolor}`;
             document.getElementById("bloodtype").textContent=`Bloodtype: ${bloodtype}`;
-            document.getElementById("robot").textContent=`Robot?: ${robot} <b>${robostat}</b>`;
+            document.getElementById("robot").textContent=`Robot?: ${robot} ${robostat}`;
             document.getElementById("map").textContent=`Current Location: ${map}`;
         </script>
       </body>

@@ -37,37 +37,41 @@
                 </div>
                 <div class="form-item">
                     Gender:
-                    <input type="radio" id="male" name="gender" value="male">
+                    <input type="radio" id="male" name="gender" value="Male"
+                    onclick="javascript:genderCheck();">
                     <label for="male">Male</label>
-                    <input type="radio" id="female" name="gender" value="female">
+                    <input type="radio" id="female" name="gender" value="Female"
+                    onclick="javascript:genderCheck();">
                     <label for="female">Female</label>
-                    <input type="radio" id="nonbinary" name="gender" value="nonbinary">
+                    <input type="radio" id="nonbinary" name="gender" value="Nonbinary"
+                    onclick="javascript:genderCheck();">
                     <label for="nonbinary">Non-binary</label>
-                    <input type="radio" id="other" name="gender" value="other">
+                    <input type="radio" id="other" name="gender" value="other"
+                    onclick="javascript:genderCheck();">
                     <label for="other">Other:</label>
-                    <input type="text" id="otherin" name="other" placeholder="Please specify"><br>
+                    <input type="text" id="otherin" name="gender" placeholder="Please specify"><br>
                 </div>
                 <div class="form-item">
                     <label for="dob">Date of Birth:</label>
                     <input type="date" id="dob" name="dob" required><br>
                 </div>
-                <!--<fieldset>
+                <fieldset>
                     <legend>Enter Email or Phone Number</legend>
                     <div class="form-item">
                         <input type="radio" id="email" name="contact" value="email"
                         onclick="javascript:emailphoneCheck();">
                         <label for="email">Email</label>
                         <input type="email" id="emailin" name="contact"
-                        placeholder="E.g. paulzack04@email.com" value="null"><br>
+                        placeholder="E.g. paulzack04@email.com"><br>
 
                         <input type="radio" id="phone" name="contact" value="phone"
                         onclick="javascript:emailphoneCheck();">
                         <label for="phone">Phone Number</label>
                         <input type="tel" id="phonein" name="phone" 
                         placeholder="E.g. 800-588-2300"
-                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value="null"><br>
+                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
                     </div>
-                </fieldset><br>-->
+                </fieldset><br>
                 <div class="form-item">
                     <label for="haircolor">What Is The Color of Your Hair?</label>
                     <input type="color" id="haircolor" name="haircolor" required><br>
@@ -120,20 +124,33 @@
             function emailphoneCheck() {
                 if (document.getElementById('email').checked) {
                     document.getElementById('emailin').style.display = 'inline';
-                    document.getElementById('emailin').toggleAttribute('required');
-                }
-                else if (document.getElementById('phone').checked) {
-                    document.getElementById('phonein').style.display = 'inline';
-                    document.getElementById('phonein').toggleAttribute('required');
-                }
-                if (!document.getElementById('email').checked){
-                    document.getElementById('emailin').style.display = 'none';
-                    document.getElementById('emailin').toggleAttribute('required');
-                }
-                else{ 
+                    document.getElementById('emailin').required = true;
+                    document.getElementById('emailin').value = "";
                     document.getElementById('phonein').style.display = 'none';
-                    document.getElementById('phonein').toggleAttribute('required');
-                }                
+                    document.getElementById('phonein').required = false;
+                    document.getElementById('phonein').value = "000-000-0000";
+                }
+                else {
+                    document.getElementById('phonein').style.display = 'inline';
+                    document.getElementById('phonein').required = true;
+                    document.getElementById('phonein').value = "";
+                    document.getElementById('emailin').style.display = 'none';
+                    document.getElementById('emailin').required;
+                    document.getElementById('emailin').value = "null@null";
+                }           
+            }
+
+            function genderCheck(){
+                if(document.getElementById('other').checked){
+                    document.getElementById('otherin').style.display = `inline`;
+                    document.getElementById('otherin').required = true;
+                    document.getElementById('otherin').value = "";
+                }
+                else{
+                    document.getElementById('otherin').style.display = `none`;
+                    document.getElementById('otherin').required = false;
+                    document.getElementById('otherin').value = "null";
+                }
             }
         </script>
     </body>
