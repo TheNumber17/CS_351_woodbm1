@@ -11,13 +11,20 @@
         </header>
         <main>
             <p>
-                Good news! We caught your criminal! Here's &{pronouns} information!
-
+                Good news! We caught your criminal! Here's ${pronouns} information!
             </p>
+            <ul>
+                <li>Name: ${name}</li>
+                <li>Gender: ${gender}</li>
+                <li>Haircolor: ${haircolor}</li>
+                <li>Bloodtype: ${bloodtype}</li>
+                <li>Robot?: ${robot} <b>${robostat}</b></li>
+                <li class="important">Current Location: ${map}</li>
+            </ul>
         </main>
         <button type="button" href="">LAUNCH ORBITAL LASER</button>
         <script>
-            const params = new URLSearchParams(body);
+            const params = new URLSearchParams(window.location.search);
             const name = params.get("name");
             const gender = params.get("gender");
             const haircolor = params.get("haircolor");
@@ -26,12 +33,20 @@
             const robot = params.get("robot");
             const dob = params.get("dob");
             let pronouns = "their";
+            let robostat = "";
 
             if(gender === "male"){
                 pronouns = "his";
             }
             else if(gender === "female"){
                 pronouns = "her"
+            }
+
+            if(robot === "yes"){
+                robostat = "(EMPs will also be deployed)";
+            }
+            else if(robot === "maybe"){
+                robostat = "(EMPs may also be deployed)";
             }
         </script>
       </body>
