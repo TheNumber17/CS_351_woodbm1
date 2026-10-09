@@ -14,12 +14,13 @@
                 Good news! We caught your criminal! Here's ${pronouns} information!
             </p>
             <ul>
-                <li>Name: ${name}</li>
-                <li>Gender: ${gender}</li>
-                <li>Haircolor: ${haircolor}</li>
-                <li>Bloodtype: ${bloodtype}</li>
-                <li>Robot?: ${robot} <b>${robostat}</b></li>
-                <li class="important">Current Location: ${map}</li>
+                <li id="name"></li>
+                <li id="gender"></li>
+                <li id="dob"></li>
+                <li id="haircolor"></li>
+                <li id="bloodtype"></li>
+                <li id="robot"></li>
+                <li id="map" class="important"></li>
             </ul>
         </main>
         <button type="button" href="">LAUNCH ORBITAL LASER</button>
@@ -48,6 +49,14 @@
             else if(robot === "maybe"){
                 robostat = "(EMPs may also be deployed)";
             }
+
+            document.getElementById("name").textContent=`Name: ${name}`;
+            document.getElementById("gender").textContent=`Gender: ${gender}`;
+            document.getElementById("dob").textContent=`Date of Birth: ${dob}`;
+            document.getElementById("haircolor").textContent=`Haircolor: ${haircolor}`;
+            document.getElementById("bloodtype").textContent=`Bloodtype: ${bloodtype}`;
+            document.getElementById("robot").textContent=`Robot?: ${robot} <b>${robostat}</b>`;
+            document.getElementById("map").textContent=`Current Location: ${map}`;
         </script>
       </body>
 </html>
