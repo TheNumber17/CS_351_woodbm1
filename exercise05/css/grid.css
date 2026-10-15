@@ -4,6 +4,10 @@
     gap: 2vw;
 }
 
+.card.special{
+    grid-column: span 2;
+}
+
 .navbar{
     display: flex; 
     align-items: center;
