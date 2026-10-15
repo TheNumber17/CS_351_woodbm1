@@ -3,10 +3,13 @@
     /*grid-template-columns: repeat(3, 1fr);*/
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2vw;
+    justify-items: center;
+    align-items: center;
 }
 
 .card.special{
     grid-column: span 2;
+    justify-self: end;
 }
 
 .navbar{
