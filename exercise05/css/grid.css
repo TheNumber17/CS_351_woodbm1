@@ -1,0 +1,21 @@
+.cards{
+    display: grid;
+}
+
+.navbar{
+    display: flex; 
+    align-items: center;
+}
+
+.navbar a{
+    margin-right: 0;
+}
+
+.nav-links, .nav-actions{
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-actions{
+    margin-left: auto;
+}
