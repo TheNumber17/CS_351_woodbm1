@@ -7,6 +7,11 @@
     align-items: center;
 }
 
+.card{
+    display: flex;
+    flex-direction: column;
+}
+
 .card.special{
     grid-column: span 2;
     justify-self: end;
