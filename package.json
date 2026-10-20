@@ -23,7 +23,8 @@
     "e04": "serve exercise04",
     "a01": "serve assignment01",
     "a02": "serve assign02",
-    "e05": "serve exercise05"
+    "e05": "serve exercise05",
+    "e06": "serve exercise06"
   },
   "dependencies": {
     "express": "^5.2.1"
