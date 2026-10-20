@@ -59,6 +59,10 @@ Demonstrates handling a POST request through server-side code.
 
 A dynamic html page about video game reviews.
 
-## excersize04
+### excersize04
 
 Demonstrate adding CSS.
+
+### exercise05
+
+Experiments with different CSS layouts
