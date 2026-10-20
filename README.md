@@ -64,6 +64,10 @@ A dynamic html page about video game reviews.
 
 A dynamic html form that helps you catch a criminal.
 
-## excercize04
+### excercize04
 
 Demonstrate adding CSS.
+
+### exercise05
+
+Experiments with different CSS layouts
