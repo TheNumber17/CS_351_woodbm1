@@ -18,6 +18,14 @@
                 let fullName = params.get("name");
                 console.log(greet(fullName));
                 console.log("Module Oatmeal from module: ", MODULE_OATMEAL);
+
+                let age = params.get("age");
+                console.log("Age before: ", age, typeof age);
+                age = Number(age);
+                console.log("Age after: ", age, typeof age);
+
+                let height = params.get("height");
+                console.log("Height: ", height, typeof height);
             </script>
             <script type="module">
                 //console.log("fullname in internal module: ", fullName);
