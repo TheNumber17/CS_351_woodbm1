@@ -18,13 +18,18 @@
                 let fullName = params.get("name");
                 console.log(greet(fullName));
             </script>
+            <script type="module">
+                //console.log("fullname in internal module: ", fullName);
+            </script>
             <script>
-                console.log("Thoughts before:",
-                    document.getElementById("thoughts")
-                );
+                //console.log("fullname in classic: ", fullName);
+                let thoughtElement = document.getElementById("thoughts");
             </script>
             <p id="thoughts"></p>
             <script>
+                console.log("Thoughts before:",
+                    document.getElementById(thoughtElement)
+                );
                 console.log("Thoughts after:",
                     document.getElementById("thoughts")
                 );
