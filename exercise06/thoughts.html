@@ -26,6 +26,13 @@
 
                 let height = params.get("height");
                 console.log("Height: ", height, typeof height);
+
+                const currentYear = new Date().getFullYear();
+                let birthYear = currentYear - age;
+                
+                let birthString = fullName + " was born in " + birthYear + ".";
+
+                document.getElementById("thoughts").textContent = birthString;
             </script>
             <script type="module">
                 //console.log("fullname in internal module: ", fullName);
