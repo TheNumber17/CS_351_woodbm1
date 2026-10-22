@@ -12,6 +12,12 @@
             <h1>Thoughts</h1>
         </header>
         <main>
+            <script type="module">
+                import { greet } from "/js/utils.js";
+                const params = new URLSearchParams(window.location.search);
+                let fullName = params.get("name");
+                console.log(greet(fullName));
+            </script>
             <script>
                 console.log("Thoughts before:",
                     document.getElementById("thoughts")
