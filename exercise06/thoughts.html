@@ -10,11 +10,12 @@
         <header>
             <h1>Thoughts</h1>
         </header>
-        <main>
+        <main> 
             <script type="module">
                 import { greet, MODULE_OATMEAL } from "/js/utils.js";
                 const params = new URLSearchParams(window.location.search);
                 let fullName = params.get("name");
+                fullName = fullName || "Guest";
                 console.log(greet(fullName));
                 console.log("Module Oatmeal from module: ", MODULE_OATMEAL);
 
@@ -27,23 +28,31 @@
 
                 let ancientString = "";
                 if(age > 200){
-                    ancientString = "Wow, you are ancient!";
+                    ancientString = "Wow, you are ancient! ";
                 }
 
                 let termsString = "";
                 if(terms == null){
-                    termsString = "You forgot to accept the terms and conditions, are you crazy?";
+                    termsString = "Also you smell like old carpet.";
                 }
+
+                let renString = "";
+                
 
                 let height = params.get("height");
                 console.log("Height: ", height, typeof height);
 
                 const currentYear = new Date().getFullYear();
                 let birthYear = currentYear - age;
-                
-                let birthString = fullName + " was born in " + birthYear + "." + " " + ancientString;
 
-                document.getElementById("thoughts").textContent = birthString + ". " + termsString;
+                if(birthYear >= 1300 && birthYear <= 1600){
+                    renString = "You were born in the Renaissance period.";
+                }
+                
+                let birthString = fullName + " was born in " + birthYear + "." 
+                + " " + ancientString + renString;
+
+                document.getElementById("thoughts").textContent = birthString + " " + termsString;
             </script>
             <script type="module">
                 //console.log("fullname in internal module: ", fullName);
@@ -54,14 +63,12 @@
                 //console.log("fullname in classic: ", fullName);
                 let thoughtElement = document.getElementById("thoughts");
             </script>
+
             <p id="thoughts"></p>
             <script>
-                console.log("Thoughts before:",
-                    document.getElementById(thoughtElement)
-                );
-                console.log("Thoughts after:",
-                    document.getElementById("thoughts")
-                );
+                console.log("Thoughts before:", thoughtElement);
+                thoughtElement = document.getElementById("thoughts");
+                console.log("Thoughts after:", thoughtElement);
             </script>
         </main>
     </body>
