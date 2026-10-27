@@ -15,40 +15,46 @@
                 import { greet, MODULE_OATMEAL } from "/js/utils.js";
                 const params = new URLSearchParams(window.location.search);
                 let fullName = params.get("name");
+                let age = params.get("age");
+                let terms = params.get("terms");
+                let height = params.get("height");
+
+                // Process full name
+                fullName = fullName.trim();
                 fullName = fullName || "Guest";
+
                 console.log(greet(fullName));
                 console.log("Module Oatmeal from module: ", MODULE_OATMEAL);
 
-                let age = params.get("age");
+               // Age calculation
                 console.log("Age before: ", age, typeof age);
                 age = Number(age);
                 console.log("Age after: ", age, typeof age);
 
-                let terms = params.get("terms");
+                // Check height
+                console.log("Height: ", height, typeof height);
 
+                // Check age
                 let ancientString = "";
                 if(age > 200){
                     ancientString = "Wow, you are ancient! ";
                 }
 
+                // Check terms
                 let termsString = "";
                 if(terms == null){
                     termsString = "Also you smell like old carpet.";
                 }
 
-                let renString = "";
-                
-
-                let height = params.get("height");
-                console.log("Height: ", height, typeof height);
-
                 const currentYear = new Date().getFullYear();
                 let birthYear = currentYear - age;
 
+                let renString = "";
                 if(birthYear >= 1300 && birthYear <= 1600){
                     renString = "You were born in the Renaissance period.";
                 }
                 
+                // Compile final output string
                 let birthString = fullName + " was born in " + birthYear + "." 
                 + " " + ancientString + renString;
 
