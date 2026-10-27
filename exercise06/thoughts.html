@@ -3,7 +3,6 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="/css/style.css" />
         <title>Thoughts</title> 
         <script src="/js/classic.js"></script>
     </head>
@@ -24,9 +23,16 @@
                 age = Number(age);
                 console.log("Age after: ", age, typeof age);
 
+                let terms = params.get("terms");
+
                 let ancientString = "";
                 if(age > 200){
                     ancientString = "Wow, you are ancient!";
+                }
+
+                let termsString = "";
+                if(terms == null){
+                    termsString = "You forgot to accept the terms and conditions, are you crazy?";
                 }
 
                 let height = params.get("height");
@@ -35,9 +41,9 @@
                 const currentYear = new Date().getFullYear();
                 let birthYear = currentYear - age;
                 
-                let birthString = fullName + " was born in " + birthYear + "." + " " + ancientString;;
+                let birthString = fullName + " was born in " + birthYear + "." + " " + ancientString;
 
-                document.getElementById("thoughts").textContent = birthString;
+                document.getElementById("thoughts").textContent = birthString + ". " + termsString;
             </script>
             <script type="module">
                 //console.log("fullname in internal module: ", fullName);
