@@ -12,7 +12,8 @@
         </header>
         <main> 
             <script type="module">
-                import { greet, MODULE_OATMEAL } from "/js/utils.js";
+                import { greet, MODULE_OATMEAL, processFullName, calculateBirthYear, checkInRenaissance }
+                from "/js/utils.js";
                 const params = new URLSearchParams(window.location.search);
                 let fullName = params.get("name");
                 let age = params.get("age");
@@ -21,14 +22,7 @@
                 const isShouting = params.has("shouting");
 
                 // Process full name
-                fullName = fullName.trim();
-                fullName = fullName || "Guest";
-                const spaceIndex = fullName.indexOf(" ");
-                if(spaceIndex !== -1){
-                    const first = fullName.slice(0, spaceIndex);
-                    const last = fullName.slice(spaceIndex + 1).trim();
-                    fullName = `${first} of House ${last}`;
-                }
+                fullName = processFullName(fullName);
 
                 console.log(greet(fullName));
                 console.log("Module Oatmeal from module: ", MODULE_OATMEAL);
@@ -53,11 +47,10 @@
                     termsString = "Also you smell like old carpet.";
                 }
 
-                const currentYear = new Date().getFullYear();
-                let birthYear = currentYear - age;
+                let birthYear = calculateBirthYear(age);
 
                 let renString = "";
-                if(birthYear >= 1300 && birthYear <= 1600){
+                if(checkInRenaissance(birthYear)){
                     renString = "You were born in the Renaissance period.";
                 }
                 
