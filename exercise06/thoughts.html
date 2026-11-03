@@ -18,6 +18,7 @@
                 let age = params.get("age");
                 let terms = params.get("terms");
                 let height = params.get("height");
+                const isShouting = params.has("shouting");
 
                 // Process full name
                 fullName = fullName.trim();
@@ -56,9 +57,12 @@
                 
                 // Compile final output string
                 let birthString = fullName + " was born in " + birthYear + "." 
-                + " " + ancientString + renString;
+                + " " + ancientString + renString + " " + termsString;
 
-                document.getElementById("thoughts").textContent = birthString + " " + termsString;
+                if(isShouting){
+                    birthString = birthString.toUpperCase();
+                }
+                document.getElementById("thoughts").textContent = birthString;
             </script>
             <script type="module">
                 //console.log("fullname in internal module: ", fullName);
