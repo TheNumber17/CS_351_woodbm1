@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Thoughts</title> 
+        <script src="/js/classic.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Thoughts</h1>
+        </header>
+        <main> 
+            <script type="module">
+                import { greet, MODULE_OATMEAL } from "/js/utils.js";
+                const params = new URLSearchParams(window.location.search);
+                let fullName = params.get("name");
+                let age = params.get("age");
+                let terms = params.get("terms");
+                let height = params.get("height");
+                const isShouting = params.has("shouting");
+
+                // Process full name
+                fullName = fullName.trim();
+                fullName = fullName || "Guest";
+                const spaceIndex = fullName.indexOf(" ");
+                if(spaceIndex !== -1){
+                    const first = fullName.slice(0, spaceIndex);
+                    const last = fullName.slice(spaceIndex + 1).trim();
+                    fullName = `${first} of House ${last}`;
+                }
+
+                console.log(greet(fullName));
+                console.log("Module Oatmeal from module: ", MODULE_OATMEAL);
+
+               // Age calculation
+                console.log("Age before: ", age, typeof age);
+                age = Number(age);
+                console.log("Age after: ", age, typeof age);
+
+                // Check height
+                console.log("Height: ", height, typeof height);
+
+                // Check age
+                let ancientString = "";
+                if(age > 200){
+                    ancientString = "Wow, you are ancient! ";
+                }
+
+                // Check terms
+                let termsString = "";
+                if(terms == null){
+                    termsString = "Also you smell like old carpet.";
+                }
+
+                const currentYear = new Date().getFullYear();
+                let birthYear = currentYear - age;
+
+                let renString = "";
+                if(birthYear >= 1300 && birthYear <= 1600){
+                    renString = "You were born in the Renaissance period.";
+                }
+                
+                // Compile final output string
+                let birthString = fullName + " was born in " + birthYear + "." 
+                + " " + ancientString + renString + " " + termsString;
+
+                if(isShouting){
+                    birthString = birthString.toUpperCase();
+                }
+                document.getElementById("thoughts").textContent = birthString;
+            </script>
+            <script type="module">
+                //console.log("fullname in internal module: ", fullName);
+                console.log("Classic Oatmeal from module: ", CLASSIC_OATMEAL);
+            </script>
+            <script>
+                console.log("Classic Oatmeal from module: ", CLASSIC_OATMEAL);
+                //console.log("fullname in classic: ", fullName);
+                let thoughtElement = document.getElementById("thoughts");
+            </script>
+
+            <p id="thoughts"></p>
+            <script>
+                console.log("Thoughts before:", thoughtElement);
+                thoughtElement = document.getElementById("thoughts");
+                console.log("Thoughts after:", thoughtElement);
+            </script>
+        </main>
+    </body>
+</html>

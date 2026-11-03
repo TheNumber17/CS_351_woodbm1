@@ -82,3 +82,8 @@ Experiments with different CSS layouts (professor edition).
 ### profexercise06
 
 Experiments with basic JavaScript (professor edition).
+
+
+### exercise06
+
+Experiments with basic Javascript

@@ -26,7 +26,9 @@
     "e05": "serve exercise05",
     "p04": "serve profexercise04",
     "p05": "serve profexercise05",
-    "p06": "serve profexercise06"
+    "p06": "serve profexercise06",
+    "e06": "serve exercise06",
+    "e07": "serve exercise07"
   },
   "dependencies": {
     "express": "^5.2.1"
