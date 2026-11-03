@@ -71,3 +71,8 @@ Demonstrate adding CSS.
 ### exercise05
 
 Experiments with different CSS layouts
+
+
+### exercise06
+
+Experiments with basic Javascript
