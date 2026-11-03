@@ -19,6 +19,7 @@
                 let age = params.get("age");
                 let height = params.get("height");
                 const terms = params.get("terms");
+                const isShouting = params.has("shouting");
 
                 // Process full name
                 fullName = fullName.trim();
@@ -57,10 +58,13 @@
                 }
 
                 // Compile final output
-                
+                let finalString = birthString + ancientString + termsString + renString;
+                if(isShouting) {
+                    finalString = finalString.toUpperCase();
+                }
                 
                 document.getElementById("thoughts").textContent
-                 = birthString + ancientString + termsString + renString;
+                 = finalString;
 
             </script>
 
