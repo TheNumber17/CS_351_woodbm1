@@ -71,3 +71,14 @@ Demonstrate adding CSS.
 ### exercise05
 
 Experiments with different CSS layouts
+### profexercise04
+
+Demonstrates adding CSS (professor edition).
+
+### profexercise05
+
+Experiments with different CSS layouts (professor edition).
+
+### profexercise06
+
+Experiments with basic JavaScript (professor edition).

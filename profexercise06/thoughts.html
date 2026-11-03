@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+                content="width=device-width, initial-scale=1.0">
+        <title>Thoughts</title>
+        <script src="js/classic.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Thoughts</h1>
+        </header>
+        <main>   
+            <script type="module">
+                import {greet,MODULE_OATMEAL} from "./js/utils.js";
+                const params = new URLSearchParams(window.location.search);
+                let fullName = params.get("name");
+                let age = params.get("age");
+                let height = params.get("height");
+                const terms = params.get("terms");
+                const isShouting = params.has("shouting");
+
+                // Process full name
+                fullName = fullName.trim();
+                fullName = fullName || "Guest";
+                const spaceIndex = fullName.indexOf(" ");
+                if(spaceIndex != -1) {
+                    const first = fullName.slice(0,spaceIndex);
+                    const last = fullName.slice(spaceIndex+1).trim();
+                    fullName = `${first} of House ${last}`;
+                }
+
+                console.log(greet(fullName));
+                
+                // Age calculations                
+                console.log("Age before:", age, typeof age);
+                age = Number(age);
+                console.log("Age after:", age, typeof age);
+
+                const currentYear = new Date().getFullYear();
+                let yearOfBirth = currentYear - age;
+                let birthString = fullName + " was born in " 
+                                    + yearOfBirth + ".";
+
+                let ancientString = "";
+                if(age > 200) {
+                    ancientString = "  JEEPERS, YOU'RE ANCIENT.";
+                }
+
+                let renString = "";
+                if(yearOfBirth >= 1300 && yearOfBirth <= 1600) {
+                    renString = "  You are born in the Renaissance.";
+                }
+
+                // Check height                
+                console.log("Height:", height, typeof height);
+
+                // Check terms 
+                console.log("terms:", terms);
+
+                let termsString = "";
+                if(terms == null) {
+                    termsString = "  Aw man, there goes my retirement.";
+                }
+
+                // Compile final output
+                let finalString = birthString + ancientString + termsString + renString;
+                if(isShouting) {
+                    finalString = finalString.toUpperCase();
+                }
+                
+                document.getElementById("thoughts").textContent
+                 = finalString;
+
+            </script>
+
+            <script type="module">
+                //console.log("fullName in internal module:", fullName);
+                console.log("Classic oatmeal from module:", CLASSIC_OATMEAL);
+            </script>
+
+            <script> 
+                console.log("Classic oatmeal from classic:", CLASSIC_OATMEAL);
+                //console.log("fullName in classic:", fullName);
+            
+                let thoughtElement = document.getElementById("thoughts");          
+                                
+                console.log("Mystery before:", mystery);
+                var mystery = "The butler did it.";
+                console.log("Mystery after:", mystery);
+            </script>
+            <p id="thoughts"></p>
+            <script>
+                console.log("Thoughts BEFORE:", thoughtElement); 
+                thoughtElement = document.getElementById("thoughts");
+                console.log("Thoughts AFTER:", thoughtElement);
+            </script>
+        </main>
+    </body>
+</html>

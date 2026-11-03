@@ -1,0 +1,8 @@
+.form-item {
+    color: blue;
+}
+
+[required] {
+    color: red;
+    font-weight: bold;
+}

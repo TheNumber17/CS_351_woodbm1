@@ -3,9 +3,15 @@ const fs = require("fs");
 const path = require("path");
 
 const server = http.createServer((req,res) => {
+    console.log("URL:", req.url);
 
-    if(req.method === "GET" && req.url === "/") {
-        const filepath = path.join(__dirname, "public", "index.html");
+    if(req.method === "GET") {
+        let urlpath = req.url;
+        if(req.url === "/") {
+            urlpath = "index.html";
+        }
+
+        const filepath = path.join(__dirname, "public", urlpath);
         console.log("FILE:", filepath);
         fs.readFile(filepath, (err,data) => {
             if(err) {
@@ -15,7 +21,15 @@ const server = http.createServer((req,res) => {
                 return;
             }
 
-            res.writeHead(200, { "Content-Type": "text/html" });
+            let contentType = "text/plain";
+            if(urlpath.endsWith(".html")) {
+                contentType = "text/html";
+            }
+            else if(urlpath.endsWith(".css")) {
+                contentType = "text/css";
+            }
+
+            res.writeHead(200, { "Content-Type": contentType });
             res.end(data);
         });  
 

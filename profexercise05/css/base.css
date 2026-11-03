@@ -1,0 +1,55 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #222;
+}
+
+header,
+nav,
+main,
+footer {
+    padding: 1rem;
+}
+
+header {
+    background-color: #333;
+    color: white;
+}
+
+nav {
+    background-color: #ddd;
+}
+
+nav a {
+    margin-right: 1rem;
+}
+
+main {
+    background-color: white;
+}
+
+.card {
+    margin: 1rem 0;
+    padding: 1rem;
+    border: 2px solid #555;
+    background-color: #e8f1f8;
+}
+
+aside {
+    margin: 1rem 0;
+    padding: 1rem;
+    border: 2px solid #888;
+    background-color: #eee;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+}
