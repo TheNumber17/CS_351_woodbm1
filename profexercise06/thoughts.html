@@ -24,6 +24,13 @@
                 // Process full name
                 fullName = fullName.trim();
                 fullName = fullName || "Guest";
+                const spaceIndex = fullName.indexOf(" ");
+                if(spaceIndex != -1) {
+                    const first = fullName.slice(0,spaceIndex);
+                    const last = fullName.slice(spaceIndex+1).trim();
+                    fullName = `${first} of House ${last}`;
+                }
+
                 console.log(greet(fullName));
                 
                 // Age calculations                
