@@ -19,6 +19,40 @@
                 let terms = params.get("terms");
                 let height = params.get("height");
                 const isShouting = params.has("shouting");
+                let birthYear = util.calculateBirthYear(person.age);
+
+                const person = {
+                    name: fullName,
+                    age: Number(age),
+                    yearBirth: birthYear,
+                    termsAccepted: params.has("terms")
+                }
+
+                function buildThoughts(person, shouting){
+                    let ancientString = "";
+                    if(person.age > 200){
+                        ancientString = "Wow, you are ancient! ";
+                    }
+
+                    // Check terms
+                    let termsString = "";
+                    if(person.termsAccepted){
+                        termsString = "Also you smell like old carpet.";
+                    }
+
+                    let renString = "";
+                    if(util.checkInRenaissance(person.yearBirth)){
+                        renString = "You were born in the Renaissance period.";
+                    }
+
+                    if(shouting){
+                    birthString = birthString.toUpperCase();
+                    }
+                    
+                    // Compile final output string
+                    let birthString = person.name + " was born in " + person.yearBirth + "." 
+                    + " " + ancientString + renString + " " + termsString;
+                }
 
                 // Process full name
                 fullName = util.processFullName(fullName);
@@ -26,40 +60,9 @@
                 console.log(util.greet(fullName));
                 console.log("Module Oatmeal from module: ", util.MODULE_OATMEAL);
 
-               // Age calculation
-                console.log("Age before: ", age, typeof age);
-                age = Number(age);
-                console.log("Age after: ", age, typeof age);
-
                 // Check height
                 console.log("Height: ", height, typeof height);
 
-                // Check age
-                let ancientString = "";
-                if(age > 200){
-                    ancientString = "Wow, you are ancient! ";
-                }
-
-                // Check terms
-                let termsString = "";
-                if(terms == null){
-                    termsString = "Also you smell like old carpet.";
-                }
-
-                let birthYear = util.calculateBirthYear(age);
-
-                let renString = "";
-                if(util.checkInRenaissance(birthYear)){
-                    renString = "You were born in the Renaissance period.";
-                }
-                
-                // Compile final output string
-                let birthString = fullName + " was born in " + birthYear + "." 
-                + " " + ancientString + renString + " " + termsString;
-
-                if(isShouting){
-                    birthString = birthString.toUpperCase();
-                }
                 document.getElementById("thoughts").textContent = birthString;
             </script>
             <script type="module">
