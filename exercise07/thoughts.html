@@ -16,71 +16,70 @@
                 const params = new URLSearchParams(window.location.search);
                 let fullName = params.get("name");
                 let age = params.get("age");
-                let terms = params.get("terms");
-                let height = params.get("height");
+                const termsAccepted = params.has("terms");
                 const isShouting = params.has("shouting");
-                let birthYear = util.calculateBirthYear(person.age);
+                let birthYear = util.calculateBirthYear(Number(age));
+
 
                 const person = {
                     name: fullName,
                     age: Number(age),
                     yearBirth: birthYear,
-                    termsAccepted: params.has("terms")
+                    termsAccepted
                 }
 
-                function buildThoughts(person, shouting){
+                const thoughtsElement = document.getElementById("thoughts");
+
+                const thoughtsView = {
+                    person,
+                    isShouting
+                }
+
+                function buildThoughts(){
                     let ancientString = "";
-                    if(person.age > 200){
+                    if(this.person.age > 200){
                         ancientString = "Wow, you are ancient! ";
                     }
 
                     // Check terms
                     let termsString = "";
-                    if(person.termsAccepted){
+                    if(this.person.termsAccepted){
                         termsString = "Also you smell like old carpet.";
                     }
 
                     let renString = "";
-                    if(util.checkInRenaissance(person.yearBirth)){
+                    if(util.checkInRenaissance(this.person.yearBirth)){
                         renString = "You were born in the Renaissance period.";
                     }
 
-                    if(shouting){
-                    birthString = birthString.toUpperCase();
-                    }
+                    this.person.name = util.processFullName(this.person.name);
                     
                     // Compile final output string
-                    let birthString = person.name + " was born in " + person.yearBirth + "." 
+                    let birthString = this.person.name + " was born in " + this.person.yearBirth + "." 
                     + " " + ancientString + renString + " " + termsString;
+
+                    if(this.isShouting){
+                    birthString = birthString.toUpperCase();
+                    }
+
+                    return birthString;
                 }
 
-                // Process full name
-                fullName = util.processFullName(fullName);
+                render(){
+                    const thoughts = this.buildThoughts();
+                    thoughtsElement.textContent = thoughts;
+                }
 
-                console.log(util.greet(fullName));
-                console.log("Module Oatmeal from module: ", util.MODULE_OATMEAL);
+                toggleShouting(){
+                    isShouting = !isShouting;
+                    this.render();
+                }
 
-                // Check height
-                console.log("Height: ", height, typeof height);
-
-                document.getElementById("thoughts").textContent = birthString;
-            </script>
-            <script type="module">
-                //console.log("fullname in internal module: ", fullName);
-                console.log("Classic Oatmeal from module: ", CLASSIC_OATMEAL);
-            </script>
-            <script>
-                console.log("Classic Oatmeal from module: ", CLASSIC_OATMEAL);
-                //console.log("fullname in classic: ", fullName);
-                let thoughtElement = document.getElementById("thoughts");
+                thoughtsView.render();
+                
             </script>
 
             <p id="thoughts"></p>
-            <script>
-                console.log("Thoughts before:", thoughtElement);
-                thoughtElement = document.getElementById("thoughts");
-                console.log("Thoughts after:", thoughtElement);
-            </script>
         </main>
     </body>
 </html>
