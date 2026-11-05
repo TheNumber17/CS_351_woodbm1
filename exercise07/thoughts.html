@@ -32,53 +32,59 @@
 
                 const thoughtsView = {
                     person,
-                    isShouting
-                }
+                    isShouting,
+                
+                    buildThoughts(person, shouting){
+                        let ancientString = "";
+                        if(this.person.age > 200){
+                            ancientString = "Wow, you are ancient! ";
+                        }
 
-                function buildThoughts(){
-                    let ancientString = "";
-                    if(this.person.age > 200){
-                        ancientString = "Wow, you are ancient! ";
+                        // Check terms
+                        let termsString = "";
+                        if(this.person.termsAccepted){
+                            termsString = "Also you smell like old carpet.";
+                        }
+
+                        let renString = "";
+                        if(util.checkInRenaissance(this.person.yearBirth)){
+                            renString = "You were born in the Renaissance period.";
+                        }
+
+                        this.person.name = util.processFullName(this.person.name);
+                        
+                        // Compile final output string
+                        let birthString = this.person.name + " was born in " + this.person.yearBirth + "." 
+                        + " " + ancientString + renString + " " + termsString;
+
+                        if(this.isShouting){
+                            birthString = birthString.toUpperCase();
+                        }
+
+                        return birthString;
+                    },
+                
+                    render(){
+                        const thoughts = this.buildThoughts();
+                        thoughtsElement.textContent = thoughts;
+                    },
+
+                    toggleShouting(){
+                        this.isShouting = !this.isShouting;
+                        this.render();
                     }
-
-                    // Check terms
-                    let termsString = "";
-                    if(this.person.termsAccepted){
-                        termsString = "Also you smell like old carpet.";
-                    }
-
-                    let renString = "";
-                    if(util.checkInRenaissance(this.person.yearBirth)){
-                        renString = "You were born in the Renaissance period.";
-                    }
-
-                    this.person.name = util.processFullName(this.person.name);
-                    
-                    // Compile final output string
-                    let birthString = this.person.name + " was born in " + this.person.yearBirth + "." 
-                    + " " + ancientString + renString + " " + termsString;
-
-                    if(this.isShouting){
-                    birthString = birthString.toUpperCase();
-                    }
-
-                    return birthString;
-                }
-
-                render(){
-                    const thoughts = this.buildThoughts();
-                    thoughtsElement.textContent = thoughts;
-                }
-
-                toggleShouting(){
-                    isShouting = !isShouting;
-                    this.render();
                 }
 
                 thoughtsView.render();
-                
+
+                const shoutButton = document.getElementById("toggleShouting");
+                shoutButton.addEventListener(
+                    "click",
+                    thoughtsView.toggleShouting.bind(thoughtsView)
+                );
             </script>
 
+            <button id="toggleShouting" type="button">Toggle Shouting</button>
             <p id="thoughts"></p>
         </main>
     </body>
