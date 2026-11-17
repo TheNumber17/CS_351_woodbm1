@@ -27,6 +27,27 @@
                     <label for="shouting">Shouting?</label>
                     <input type="checkbox" id="shouting" name="shouting">
                 </div>
+                <div class="form-element">
+                    <label for="student">Student?</label>
+                    <input type="checkbox" id="student" name="student">
+                </div>
+                <div id="majorSection" class="form-element" hidden>
+                    <label for="major">Major:</label>
+                    <input type="text" id="major" name="major" disabled>
+                </div>
+                <script type="module">
+                    const section = document.getElementById("majorSection");
+                    const student =  document.getElementById("student");
+                    const major = document.getElementById("major");
+
+                    function updateStudent(){
+                        section.hidden = !student.checked;
+                        major.disabled = !student.checked;
+                    }
+
+                    student.addEventListener("change", updateStudent);
+                    window.addEventListener("pageshow", updateStudent);
+                </script>
                 <div class="submit-area">
                     <button type="submit">Submit</button>
                 </div>

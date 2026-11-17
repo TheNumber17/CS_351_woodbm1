@@ -13,6 +13,8 @@
         <main> 
             <script type="module">
                 import * as util from "/js/utils.js";
+                import {Person, Student} from "/js/person.js";
+
                 const params = new URLSearchParams(window.location.search);
                 let fullName = params.get("name");
                 let age = params.get("age");
@@ -20,13 +22,15 @@
                 const isShouting = params.has("shouting");
                 let birthYear = util.calculateBirthYear(Number(age));
 
+                const person = new Person(fullName, Number(age), birthYear, termsAccepted);
 
+                /*
                 const person = {
                     name: fullName,
                     age: Number(age),
                     yearBirth: birthYear,
                     termsAccepted
-                }
+                }*/
 
                 const thoughtsElement = document.getElementById("thoughts");
 
@@ -35,6 +39,8 @@
                     isShouting,
                 
                     buildThoughts(person, shouting){
+
+
                         let ancientString = "";
                         if(this.person.age > 200){
                             ancientString = "Wow, you are ancient! ";
@@ -47,15 +53,12 @@
                         }
 
                         let renString = "";
-                        if(util.checkInRenaissance(this.person.yearBirth)){
+                        if(util.checkInRenaissance(this.person.getBirthYear())){
                             renString = "You were born in the Renaissance period.";
                         }
 
-                        this.person.name = util.processFullName(this.person.name);
-                        
                         // Compile final output string
-                        let birthString = this.person.name + " was born in " + this.person.yearBirth + "." 
-                        + " " + ancientString + renString + " " + termsString;
+                        let birthString = this.person.getDescription() + " " + ancientString + renString + " " + termsString;
 
                         if(this.isShouting){
                             birthString = birthString.toUpperCase();
