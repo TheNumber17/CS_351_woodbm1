@@ -23,6 +23,21 @@
                 let birthYear = util.calculateBirthYear(Number(age));
                 const isStudent = params.has("student");
                 const major = params.get("major");
+                let favorites = params.get("favorites");
+
+                favorites = favorites.trim();
+                let favoriteFoods = [];
+                if(favorites.length > 0){
+                    favFoods = favorites.split(",")
+                }
+
+                let cleanFoods = [];
+                for(let food of favoriteFoods){
+                    food = food.trim();
+                    if(food.length > 0){
+                        cleanFoods.push(food);
+                    }
+                }
 
                 const person = isStudent ? 
                     new Student(fullName, Number(age), termsAccepted, major) : 
