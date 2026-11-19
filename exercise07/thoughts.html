@@ -21,8 +21,12 @@
                 const termsAccepted = params.has("terms");
                 const isShouting = params.has("shouting");
                 let birthYear = util.calculateBirthYear(Number(age));
+                const isStudent = params.has("student");
+                const major = params.get("major");
 
-                const person = new Person(fullName, Number(age), birthYear, termsAccepted);
+                const person = isStudent ? 
+                    new Student(fullName, Number(age), termsAccepted, major) : 
+                    new Person(fullName, Number(age), termsAccepted);
 
                 /*
                 const person = {
@@ -57,8 +61,12 @@
                             renString = "You were born in the Renaissance period.";
                         }
 
+                        const vcount = util.countVowels(this.person.name);
+                        const vowelString = `Your name has ${vcount} vowels.`;
+
                         // Compile final output string
-                        let birthString = this.person.getDescription() + " " + ancientString + renString + " " + termsString;
+                        let birthString = this.person.getDescription() + " " + ancientString + 
+                            renString + " " + termsString + " " + vowelString;
 
                         if(this.isShouting){
                             birthString = birthString.toUpperCase();

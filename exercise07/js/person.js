@@ -20,7 +20,7 @@ export class Person {
             const last = fancyName.slice(spaceIndex + 1).trim();
             fancyName = `${first} of House ${last}`;
         }
-    return fancyName;
+        return fancyName;
     }
 
     getBirthYear(){
@@ -28,7 +28,7 @@ export class Person {
     }
 
     getDescription(){
-        return `${this.fancyName} was born in the year ${this.getBirthYear()}.`;
+        return `${this.getFancyName()} was born in the year ${this.getBirthYear()}.`;
     }
 }
 
@@ -40,6 +40,6 @@ export class Student extends Person {
 
     getDescription(){
         return super.getDescription()
-        + `${this.name} studies ${this.major}.`;
+        + ` ${this.getFancyName()} studies ${this.major}.`;
     }
 }
