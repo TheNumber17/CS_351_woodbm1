@@ -28,7 +28,8 @@
     "p05": "serve profexercise05",
     "p06": "serve profexercise06",
     "e06": "serve exercise06",
-    "e07": "serve exercise07"
+    "e07": "serve exercise07",
+    "a03": "serve assign03"
   },
   "dependencies": {
     "express": "^5.2.1"
