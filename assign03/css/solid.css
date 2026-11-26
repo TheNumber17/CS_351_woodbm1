@@ -23,11 +23,12 @@ header{
     justify-content: space-evenly;
     background-color: #e08c6b;
     border: 8px solid black;
+    border-bottom: none;
     align-items: center;
     max-height: 300px;
     width: 60vw;
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
 }
 
 .title{
@@ -40,7 +41,7 @@ header{
 .portrait{
     width: auto;
     height: 285px;
-    border: 5px solid #E06B84;
+    border: 4px solid black;
 }
 
 main img{
@@ -49,7 +50,7 @@ main img{
     border: 4px solid #808DFF;
 }
 
-p{
+main p{
     text-align: center;
     margin-left: 5vw;
     margin-right: 5vw;
@@ -58,4 +59,22 @@ p{
 .intro{
     font-weight: bold;
     font-size: large;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    border: 8px solid black;
+    border-top: 4px solid black;
+    margin-bottom: 15px;
+}
+
+button{
+    background-color: #E06B84;
+    width: 15vw;
+}
+
+.songs{
+    overflow: hidden;
+    display: none;
 }
