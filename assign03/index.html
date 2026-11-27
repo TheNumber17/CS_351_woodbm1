@@ -18,20 +18,20 @@
             <button type="button" class="about">About</button>
             <button type="button" class="music">Music</button>
             <div class="songs">
-                <b>to use music you will have to allow the website to play audio</b>
+                <b>to use music you may have to allow the website to play audio</b>
                 <p>Listen to music on your gallery walk!</p>
                 <div class="list">
                     <figure>
                         <figcaption class="cap"></figcaption>
-                        <audio controls id="song1" src=""></audio>
+                        <audio controls class="song" src=""></audio>
                     </figure>
                     <figure>
                         <figcaption class="cap"></figcaption>
-                        <audio controls id="song2" src=""></audio>
+                        <audio controls class="song" src=""></audio>
                     </figure>
                     <figure>
                         <figcaption class="cap"></figcaption>
-                        <audio controls id="song3" src=""></audio>
+                        <audio controls class="song" src=""></audio>
                     </figure>
                 </div>
             </div>
@@ -86,6 +86,7 @@
                 var coll = document.getElementsByClassName("music");
                 var i;
                 const cap = document.getElementsByClassName("cap");
+                const song = document.getElementsByClassName("song");
                 const params = new URLSearchParams(window.location.search);
 
 
@@ -106,9 +107,12 @@
                     document.getElementById("theme").href = "css/silly.css";
                 }
                 else{
-                    cap[0].textContent = "song1";
-                    cap[1].textContent = `song2`;
-                    cap[2].textContent = `song3`;
+                    cap[0].textContent = `Expo Music`;
+                    cap[1].textContent = `Instrumental Music Not Connected To Any Particular Song`;
+                    cap[2].textContent = `A Swim In The Park`;
+                    song[0].src = "audio/Expo.mp3";
+                    song[1].src = "audio/Instrumental.mp3";
+                    song[2].src = "audio/Swim.mp3";
                 }
 
 

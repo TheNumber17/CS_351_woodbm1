@@ -81,6 +81,7 @@ button{
     grid-column: span 4;
     flex-direction: row;
     align-items: center;
+    text-align: center;
     padding: 4px;
     background-color: #E06B84;
     z-index: 1;
@@ -88,5 +89,7 @@ button{
 
 .list{
     display: flex;
+    font-weight: bold;
+    text-align: center;
     flex-direction: column;
 }
