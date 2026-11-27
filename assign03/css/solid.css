@@ -62,8 +62,9 @@ main p{
 }
 
 nav{
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(4, 15vw);
+    grid-template-rows: repeat(2, auto);
     border: 8px solid black;
     border-top: 4px solid black;
     margin-bottom: 15px;
@@ -77,4 +78,15 @@ button{
 .songs{
     overflow: hidden;
     display: none;
+    grid-column: span 4;
+    flex-direction: row;
+    align-items: center;
+    padding: 4px;
+    background-color: #E06B84;
+    z-index: 1;
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
 }

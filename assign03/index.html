@@ -15,21 +15,26 @@
         <nav>
             <button type="button" class="solid">Solid Mode</button>
             <button type="button" class="silly">Silly Mode</button>
+            <button type="button" class="about">About</button>
             <button type="button" class="music">Music</button>
             <div class="songs">
                 <b>to use music you will have to allow the website to play audio</b>
                 <p>Listen to music on your gallery walk!</p>
-                <figure class="music" id="song1">
-                    <figcaption id="cap1"></figcaption>
-                </figure>
-                <figure class="music" id="song2">
-                    <figcaption id="cap2"></figcaption>
-                </figure>
-                <figure class="music" id="song3">
-                    <figcaption id="cap3"></figcaption>
-                </figure>
+                <div class="list">
+                    <figure>
+                        <figcaption class="cap"></figcaption>
+                        <audio controls id="song1" src=""></audio>
+                    </figure>
+                    <figure>
+                        <figcaption class="cap"></figcaption>
+                        <audio controls id="song2" src=""></audio>
+                    </figure>
+                    <figure>
+                        <figcaption class="cap"></figcaption>
+                        <audio controls id="song3" src=""></audio>
+                    </figure>
+                </div>
             </div>
-            <button type="button" class="about">About</button>
         </nav>
         <main>
             <!--Remember to fill in alt text for pictures-->
@@ -80,19 +85,33 @@
             <script>
                 var coll = document.getElementsByClassName("music");
                 var i;
+                const cap = document.getElementsByClassName("cap");
+                const params = new URLSearchParams(window.location.search);
+
 
                 for (i = 0; i < coll.length; i++) {
                     coll[i].addEventListener("click", function() {
                     this.classList.toggle("active");
                     var content = this.nextElementSibling;
 
-                    if (content.style.display === "block") {
+                    if (content.style.display === "flex") {
                     content.style.display = "none";
                     } else {
-                    content.style.display = "block";
+                    content.style.display = "flex";
                     }
                 });
                 }
+
+                if(params.get("theme") === "silly"){
+                    document.getElementById("theme").href = "css/silly.css";
+                }
+                else{
+                    cap[0].textContent = "song1";
+                    cap[1].textContent = `song2`;
+                    cap[2].textContent = `song3`;
+                }
+
+
             </script>
         </footer>
     </body>
